@@ -21,7 +21,9 @@ mooreaDesc.style.display = "none";
 hakoneDesc.style.display = "none";
 puertoVallartaDesc.style.display = "none";
 
-
+//hides result
+var showResult = document.getElementById("showResult");
+showResult.addEventListener("click", displayResult);
 
 //Counter Variables for each of the cities, used to determine city with the most interest
 var salamancaCounter = 0;
@@ -62,7 +64,7 @@ q2N.addEventListener("click", disableQ2);
 function disableQ2()
 {
     q2Y.disabled = true;
-    q1N.disabled = true;
+    q2N.disabled = true;
 }
 
 //Q3
@@ -274,5 +276,59 @@ function counterPlus(city)
     if (questionsAnswered == 15)
     {
         console.log("the quiz is done");
+    }
+}
+
+function displayResult()
+{
+
+    if (questionsAnswered >= 1) {
+        showResult.disabled = true;
+    }
+    var citiesCounted = [salamancaCounter, dunhuangCounter, zakopaneCounter, krabiTownCounter, assisiCounter, rabatCounter, tsarabanjinaCounter, mooreaCounter, hakoneCounter, puertoVallartaCounter]
+    var mostAlike = Math.max.apply(Math, citiesCounted);
+    if (salamancaCounter == mostAlike)
+    {
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        salamancaDesc.style.display = "block";
+        console.log("salamanca");
+    }
+    else if (dunhuangCounter == mostAlike)
+    {
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        dunhuangDesc.style.display = "block";
+        console.log("dunhuang");
+    }else if(zakopaneCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        zakopaneDesc.style.display = "block";
+        console.log("zakopane");
+    }else if(krabiTownCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        krabiDesc.style.display = "block";
+        console.log("krabi");
+    }else if(assisiCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        assisiDesc.style.display = "block";
+        console.log("assisi");
+    }else if(rabatCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        rabatDesc.style.display = "block";
+        console.log("rabat");
+    }else if(tsarabanjinaCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        tsarabanjinaDesc.style.display = "block";
+        console.log("tsarabanjina");
+    }else if(mooreaCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        mooreaDesc.style.display = "block";
+        console.log("moorea");
+    }else if(hakoneCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        hakoneDesc.style.display = "block";
+        console.log("hakone");
+    }else if(puertoVallartaCounter == mostAlike){
+        document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+        puertoVallartaDesc.style.display = "block";
+        console.log("puerto vallarta");
     }
 }
