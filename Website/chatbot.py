@@ -21,7 +21,7 @@ bot = ChatBot(
 
 trainer = ChatterBotCorpusTrainer(bot)
 
-trainer.train("chatterbot.corpus.english")
+trainer.train("chatterbot.corpus.english") # add path to custom corpus file here
 
 while True:
     try:
