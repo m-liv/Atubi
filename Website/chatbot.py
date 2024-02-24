@@ -22,6 +22,7 @@ bot = ChatBot(
 trainer = ChatterBotCorpusTrainer(bot)
 
 trainer.train("chatterbot.corpus.english") # add path to custom corpus file here
+trainer.train("./data/salamanca.yml")
 
 while True:
     try:
