@@ -1,2 +1,90 @@
 /* Style Page */
+/* Overall page */
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+    background-color: #f5e6e1;
+}
+
+/* Intro */
+h1 {
+    font-style: italic;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: #9c2020;
+    text-align: center;
+}
+
+#intro-description {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+
+/* Questions */
+h2 {
+    margin-top: 2em;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 4em;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.answer-choice {
+    margin: 5px;
+}
+
+.answer-choice img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.answer-button {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+
+/* Result section */
+.result-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.result-section h2 {
+    color: #9c2020;
+}
+
+#redlore-description {
+    display: none;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 3em;
+}
+
+#repmore-description {
+    display: none;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 3em;
+}
+
+/* Restart button */
+.restart-button {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 3em;
+}
 
