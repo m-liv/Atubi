@@ -1,2 +1,2 @@
 //recommender quiz
-//comment is added
+var questionsAnswered = 0;
