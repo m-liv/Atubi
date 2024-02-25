@@ -1,6 +1,6 @@
-//recommender quiz
+/recommender quiz
 
-//varialbes for restart
+//variables for restart
 var restart = document.getElementById("restartButton");
 restart.addEventListener("click", restartQuiz);
 
@@ -61,6 +61,10 @@ function disableQ1()
 {
     q1Y.disabled = true;
     q1N.disabled = true;
+    q1Y.style.cursor = "not-allowed";
+    q1Y.style.backgroundColor = "#CCCCCC";
+    q1N.style.cursor = "not-allowed";
+    q1N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q2
@@ -75,9 +79,12 @@ q2N.addEventListener("click", disableQ2);
 
 function disableQ2()
 {
-    q2Y.setAttribute('disabled', 'disabled')
     q2Y.disabled = true;
     q2N.disabled = true;
+    q2Y.style.cursor = "not-allowed";
+    q2Y.style.backgroundColor = "#CCCCCC";
+    q2N.style.cursor = "not-allowed";
+    q2N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q3
@@ -96,6 +103,10 @@ function disableQ3()
 {
     q3Y.disabled = true;
     q3N.disabled = true;
+    q3Y.style.cursor = "not-allowed";
+    q3Y.style.backgroundColor = "#CCCCCC";
+    q3N.style.cursor = "not-allowed";
+    q3N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q4
@@ -110,6 +121,10 @@ function disableQ4()
 {
     q4Y.disabled = true;
     q4N.disabled = true;
+    q4Y.style.cursor = "not-allowed";
+    q4Y.style.backgroundColor = "#CCCCCC";
+    q4N.style.cursor = "not-allowed";
+    q4N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q5
@@ -125,6 +140,10 @@ function disableQ5()
 {
     q5Y.disabled = true;
     q5N.disabled = true;
+    q5Y.style.cursor = "not-allowed";
+    q5Y.style.backgroundColor = "#CCCCCC";
+    q5N.style.cursor = "not-allowed";
+    q5N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q6
@@ -139,6 +158,10 @@ function disableQ6()
 {
     q6Y.disabled = true;
     q6N.disabled = true;
+    q6Y.style.cursor = "not-allowed";
+    q6Y.style.backgroundColor = "#CCCCCC";
+    q6N.style.cursor = "not-allowed";
+    q6N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q7
@@ -153,6 +176,10 @@ function disableQ7()
 {
     q7Y.disabled = true;
     q7N.disabled = true;
+    q7Y.style.cursor = "not-allowed";
+    q7Y.style.backgroundColor = "#CCCCCC";
+    q7N.style.cursor = "not-allowed";
+    q7N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q8
@@ -166,6 +193,10 @@ function disableQ8()
 {
     q8Y.disabled = true;
     q8N.disabled = true;
+    q8Y.style.cursor = "not-allowed";
+    q8Y.style.backgroundColor = "#CCCCCC";
+    q8N.style.cursor = "not-allowed";
+    q8N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q9
@@ -180,6 +211,10 @@ function disableQ9()
 {
     q9Y.disabled = true;
     q9N.disabled = true;
+    q9Y.style.cursor = "not-allowed";
+    q9Y.style.backgroundColor = "#CCCCCC";
+    q9N.style.cursor = "not-allowed";
+    q9N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q10
@@ -195,6 +230,10 @@ function disableQ10()
 {
     q10Y.disabled = true;
     q10N.disabled = true;
+    q10Y.style.cursor = "not-allowed";
+    q10Y.style.backgroundColor = "#CCCCCC";
+    q10N.style.cursor = "not-allowed";
+    q10N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q11
@@ -210,6 +249,10 @@ function disableQ11()
 {
     q11Y.disabled = true;
     q11N.disabled = true;
+    q11Y.style.cursor = "not-allowed";
+    q11Y.style.backgroundColor = "#CCCCCC";
+    q11N.style.cursor = "not-allowed";
+    q11N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q12
@@ -223,6 +266,10 @@ function disableQ12()
 {
     q12Y.disabled = true;
     q12N.disabled = true;
+    q12Y.style.cursor = "not-allowed";
+    q12Y.style.backgroundColor = "#CCCCCC";
+    q12N.style.cursor = "not-allowed";
+    q12N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q13
@@ -236,6 +283,10 @@ function disableQ13()
 {
     q13Y.disabled = true;
     q13N.disabled = true;
+    q13Y.style.cursor = "not-allowed";
+    q13Y.style.backgroundColor = "#CCCCCC";
+    q13N.style.cursor = "not-allowed";
+    q13N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q14
@@ -253,6 +304,10 @@ function disableQ14()
 {
     q14Y.disabled = true;
     q14N.disabled = true;
+    q14Y.style.cursor = "not-allowed";
+    q14Y.style.backgroundColor = "#CCCCCC";
+    q14N.style.cursor = "not-allowed";
+    q14N.style.backgroundColor = "#CCCCCC";
 }
 
 //Q15
@@ -266,6 +321,10 @@ function disableQ15()
 {
     q15Y.disabled = true;
     q15N.disabled = true;
+    q15Y.style.cursor = "not-allowed";
+    q15Y.style.backgroundColor = "#CCCCCC";
+    q15N.style.cursor = "not-allowed";
+    q15N.style.backgroundColor = "#CCCCCC";
 }
 function incrementSalamanca(){
     salamancaCounter += 1;
@@ -431,4 +490,3 @@ function restartQuiz()
     hakoneDesc.style.display = "none";
     puertoVallartaDesc.style.display = "none";
 }
-
