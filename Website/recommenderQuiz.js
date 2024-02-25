@@ -1,4 +1,9 @@
 //recommender quiz
+
+//varialbes for restart
+var restart = document.getElementById("restartButton");
+restart.addEventListener("click", restartQuiz);
+
 //variables for the results, should be hidden at the beginning
 var salamancaDesc = document.getElementById("salamanca");
 var dunhuangDesc = document.getElementById("dunhuang");
@@ -363,3 +368,66 @@ function displayResult()
         console.log("puerto vallarta");
     }
 }
+
+function restartQuiz()
+{
+    console.log("the quiz has been restarted");
+    salamancaCounter = 0;
+    dunhuangCounter = 0;
+    zakopaneCounter = 0;
+    krabiTownCounter = 0;
+    assisiCounter = 0;
+    rabatCounter = 0;
+    tsarabanjinaCounter = 0;
+    mooreaCounter = 0;
+    hakoneCounter = 0;
+    puertoVallartaCounter = 0;
+
+
+    questionsAnswered = 0;
+
+    q1Y.disabled = false;
+    q1N.disabled = false;
+    q2Y.disabled = false;
+    q2N.disabled = false;
+    q3Y.disabled = false;
+    q3N.disabled = false;
+    q4Y.disabled = false;
+    q4N.disabled = false;
+    q5Y.disabled = false;
+    q5N.disabled = false;
+    q6Y.disabled = false;
+    q6N.disabled = false;
+    q7Y.disabled = false;
+    q7N.disabled = false;
+    q8Y.disabled = false;
+    q8N.disabled = false;
+    q9Y.disabled = false;
+    q9N.disabled = false;
+    q10Y.disabled = false;
+    q10N.disabled = false;
+    q11Y.disabled = false;
+    q11N.disabled = false;
+    q12Y.disabled = false;
+    q12N.disabled = false;
+    q13Y.disabled = false;
+    q13N.disabled = false;
+    q14Y.disabled = false;
+    q14N.disabled = false;
+    q15Y.disabled = false;
+    q15N.disabled = false;
+
+    showResult.disabled = false;
+    document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
+    salamancaDesc.style.display = "none";
+    dunhuangDesc.style.display = "none";
+    zakopaneDesc.style.display = "none";
+    krabiDesc.style.display = "none";
+    assisiDesc.style.display = "none";
+    rabatDesc.style.display = "none";
+    tsarabanjinaDesc.style.display = "none";
+    mooreaDesc.style.display = "none";
+    hakoneDesc.style.display = "none";
+    puertoVallartaDesc.style.display = "none";
+}
+
