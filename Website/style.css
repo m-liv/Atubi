@@ -1,2 +1,12 @@
 /* Style Page */
 
+body {
+    font-family: "Segoe UI";
+    margin: 2em;
+    background-color: #ffffff;
+    color:#404040
+}
+
+/* for all the result pages* .final {
+    text-align: center;
+}
