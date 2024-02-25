@@ -3,6 +3,8 @@ categories:
   - China
   - Desert
 conversations:
+  - - Help
+    - "You can ask me about location, attractions, culture, music, and cuisine! A list of suggested prompts include: 'Tell me about...'; 'Where is ... located?'; 'Things to do in...'; What is the culture like in...'; 'What is a popular food in...'"
   - - Where is Dunhuang located?
     - "Dunhuang is situated near the edge of the Gobi Desert and the Taklamakan Desert. It's most renowned for the Mogao Caves, a complex of 492 temples carved into the cliffs that contain some of the finest examples of Buddhist art spanning a period of 1,000 years. The city's history as a cultural and religious melting pot is evident in its art, architecture, and manuscripts, which incorporate influences from various cultures along the Silk Road."
   - - Where is Dunhuang's location?
