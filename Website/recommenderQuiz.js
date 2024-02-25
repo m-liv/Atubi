@@ -2,7 +2,7 @@
 //variables for the results, should be hidden at the beginning
 var salamancaDesc = document.getElementById("salamanca");
 var dunhuangDesc = document.getElementById("dunhuang");
-var zakopaneDesc = document.getElementById("zakopane");
+var kashmirDesc = document.getElementById("kashmir");
 var krabiDesc = document.getElementById("krabi");
 var assisiDesc = document.getElementById("assisi");
 var rabatDesc = document.getElementById("rabat");
@@ -12,7 +12,7 @@ var hakoneDesc = document.getElementById("hakone");
 var puertoVallartaDesc = document.getElementById("puertoVallarta");
 salamancaDesc.style.display = "none";
 dunhuangDesc.style.display = "none";
-zakopaneDesc.style.display = "none";
+kashmirDesc.style.display = "none";
 krabiDesc.style.display = "none";
 assisiDesc.style.display = "none";
 rabatDesc.style.display = "none";
@@ -28,7 +28,7 @@ showResult.addEventListener("click", displayResult);
 //Counter Variables for each of the cities, used to determine city with the most interest
 var salamancaCounter = 0;
 var dunhuangCounter = 0;
-var zakopaneCounter = 0;
+var kashmirCounter = 0;
 var krabiTownCounter = 0;
 var assisiCounter = 0;
 var rabatCounter = 0;
@@ -109,7 +109,7 @@ function disableQ5()
 //Q6
 var q6Y = document.getElementById("q6Y");
 var q6N = document.getElementById("q6N");
-q6Y.addEventListener("click", counterPlus("krabi"),counterPlus("zakopane"));
+q6Y.addEventListener("click", counterPlus("krabi"),counterPlus("kashmir"));
 q6Y.addEventListener("click", disableQ6);
 q6N.addEventListener("click", disableQ6);
 
@@ -122,7 +122,7 @@ function disableQ6()
 //Q7
 var q7Y = document.getElementById("q7Y");
 var q7N = document.getElementById("q7N");
-q7Y.addEventListener("click", counterPlus("hakone"),counterPlus("zakopane"));
+q7Y.addEventListener("click", counterPlus("hakone"),counterPlus("kashmir"));
 q7Y.addEventListener("click", disableQ7);
 q7N.addEventListener("click", disableQ7);
 
@@ -187,7 +187,7 @@ function disableQ11()
 //Q12
 var q12Y = document.getElementById("q12Y");
 var q12N = document.getElementById("q12N");
-q12Y.addEventListener("click", counterPlus("zakopane"));
+q12Y.addEventListener("click", counterPlus("kashmir"));
 q12Y.addEventListener("click", disableQ12);
 q12N.addEventListener("click", disableQ12);
 
@@ -213,7 +213,7 @@ function disableQ13()
 //Q14
 var q14Y = document.getElementById("q14Y");
 var q14N = document.getElementById("q14N");
-q14Y.addEventListener("click", counterPlus("hakone"), counterPlus("krabi"), counterPlus("zakopane"));
+q14Y.addEventListener("click", counterPlus("hakone"), counterPlus("krabi"), counterPlus("kashmir"));
 q14Y.addEventListener("click", disableQ14);
 q14N.addEventListener("click", disableQ14);
 
@@ -246,8 +246,8 @@ function counterPlus(city)
         case "dunhuang":
             dunhuangCounter+=1;
             break;
-        case "zakopane":
-            zakopaneCounter+=1;
+        case "kashmir":
+            kashmirCounter+=1;
             break;
         case "krabi":
             krabiTownCounter+=1;
@@ -285,7 +285,7 @@ function displayResult()
     if (questionsAnswered >= 1) {
         showResult.disabled = true;
     }
-    var citiesCounted = [salamancaCounter, dunhuangCounter, zakopaneCounter, krabiTownCounter, assisiCounter, rabatCounter, tsarabanjinaCounter, mooreaCounter, hakoneCounter, puertoVallartaCounter]
+    var citiesCounted = [salamancaCounter, dunhuangCounter, kashmirCounter, krabiTownCounter, assisiCounter, rabatCounter, tsarabanjinaCounter, mooreaCounter, hakoneCounter, puertoVallartaCounter]
     var mostAlike = Math.max.apply(Math, citiesCounted);
     if (salamancaCounter == mostAlike)
     {
@@ -298,9 +298,9 @@ function displayResult()
         document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
         dunhuangDesc.style.display = "block";
         console.log("dunhuang");
-    }else if(zakopaneCounter == mostAlike){
+    }else if(kashmirCounter == mostAlike){
         document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
-        zakopaneDesc.style.display = "block";
+        kashmirCounter.style.display = "block";
         console.log("zakopane");
     }else if(krabiTownCounter == mostAlike){
         document.getElementById("result").innerHTML = "The ideal travel destination for you is: ";
