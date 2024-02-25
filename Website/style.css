@@ -1,1 +1,178 @@
-our style page
+/* Style Page */
+
+body {
+    font-family: "Segoe UI";
+    margin: 2em;
+    background-color: #ffffff;
+    color:#404040
+}
+
+h1 {
+    font-style: italic;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: #404040;
+    text-align: center;
+}
+
+#intro-description {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+
+/* Questions */
+h2 {
+    margin-top: 2em;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 4em;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.answer-choice {
+    margin: 5px;
+}
+
+.answer-choice img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.answer-button {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+
+/* Result section */
+.result-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.result-section h2 {
+    color: #404040;
+}
+
+#redlore-description {
+    display: none;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 3em;
+}
+
+#repmore-description {
+    display: none;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 3em;
+}
+
+/* Restart button */
+.restart-button {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 3em;
+}
+
+button  {
+    border-radius: 20px; /* Adjust the border-radius value to change the roundness */
+    padding: 15px 30px; /* Adjust padding as needed */
+    background-color: #4CAF50; /* Set background color */
+    color: white; /* Set text color */
+    border: none; /* Remove default button border */
+    text-align: center; /* Center text horizontally */
+    text-decoration: none; /* Remove default underline */
+    display: inline-block; /* Make the button behave like an inline element */
+    font-size: 20px; /* Set font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border: black;
+}
+
+button:hover {
+    background-color: #45a049
+}
+
+ul {
+    list-style: none;
+    padding: 20px;
+    margin: -10px;
+    background: #0B2E75;
+}
+ul li {
+    display: block;
+    position: relative;
+    float: left;
+    background: #0B2E75;
+}
+/* This hides the dropdowns */
+li ul {
+    display: none;
+}
+ul li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+}
+ul li a:hover {
+    background: #1148B6;
+}
+/* Display the dropdown */
+li:hover > ul {
+    display: block;
+    position: absolute;
+}
+/* Remove float from dropdown lists */
+li:hover li {
+    float: none;
+}
+li:hover a {
+    background: #1148B6;
+}
+li:hover li a:hover {
+    background: #1148B6;
+}
+.main-navigation li ul li {
+    border-top: 10px;
+}
+/* Displays second level dropdowns to the right of the first level dropdown */
+ul ul ul {
+    left: 100%;
+    top: 0;
+}
+
+
+/* Simple clearfix */
+
+ul:before,
+ul:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+ul:after {
+    clear: both;
+}
+
+.rheader {
+    color: #404040;
+    text-align: left;
+    margin-top: 1em
+}
+
+
