@@ -14,8 +14,8 @@ bot = ChatBot(
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
     logic_adapters=[{
         'import_path': 'chatterbot.logic.BestMatch',
-        'default_response': "I'm sorry, but I didn't quite catch that. For more help on using TravelBot, enter 'Help'.",
-        'maximum_similarity_threshold': 0.70}
+        #'default_response': "I'm sorry, but I didn't quite catch that. For more help on using TravelBot, enter 'Help'.",
+        'maximum_similarity_threshold': 0.90}
     ],
     database_uri='sqlite:///database.sqlite3'
 )
@@ -23,8 +23,8 @@ bot = ChatBot(
 trainer = ChatterBotCorpusTrainer(bot)
 
 trainer.train("chatterbot.corpus.english.greetings") # add path to custom corpus file here
-trainer.train("./data/salamanca.yml")
-trainer.train("./data/dunhuang.yml")
+# trainer.train("./Chatterbot/data/salamanca.yml")
+# trainer.train("./Chatterbot/data/dunhuang.yml")
 
 name = input("Hi, I'm TravelBot! What is your name? > ")
 print("Nice to meet you, " + str(name) + "!")
@@ -32,9 +32,11 @@ destinationInput = input("Tell me, what is your next destination? > ")
 runLoop = True
 while (runLoop):
     if ("salamanca" in destinationInput.casefold()) | ("spain" in destinationInput.casefold()):
+        trainer.train("./Chatterbot/data/salamanca.yml")
         destination = "Salamanca"
         break
     elif ("dunhuang" in destinationInput.casefold()) | ("china" in destinationInput.casefold()):
+        trainer.train("./Chatterbot/data/dunhuang.yml")
         destination = "Dunhuang"
         break
     elif ("srinagar" in destinationInput.casefold()) | ("kashmir" in destinationInput.casefold()):
@@ -80,9 +82,23 @@ print(" - What is the culture like in " + str(destination) + "?")
 print(" - What is a popular food in " + str(destination) + "?")
 print(" - What kind of music do the people of " + str(destination) + " listen to?")
 
+global responseSet
+global setSize
+global newSetSize
+
+responseSet = set()
 while True:
     try:
-        bot_input = bot.get_response(input("> "))
+        userIn = input("> ")
+        setSize = len(responseSet)
+        bot_input = bot.get_response(userIn)
+        responseSet.add(bot_input)
+        newSetSize = len(responseSet)
+        timesTried = 0
+        while (newSetSize == setSize) & (timesTried < 10):
+            bot_input = bot.get_response(userIn)
+            newSetSize = len(responseSet)
+            timesTried += 1
         print(bot_input)
 
     except(KeyboardInterrupt, EOFError, SystemExit):
