@@ -4,6 +4,8 @@ categories:
   - Europe
   - cozy
 conversations:
+  - - Help
+    - "You can ask me about location, attractions, culture, music, and cuisine! A list of suggested prompts include: 'Tell me about...'; 'Where is ... located?'; 'Things to do in...'; What is the culture like in...'; 'What is a popular food in...'"
   - - tell me about salamanca
     - "Here are some fun facts about Salamanca, Spain: Salamanca is located in western Spain and is the capital of the Province of Salamanca in the autonomous community of Castile and León. 
     Salamanca is known for its historic university, the University of Salamanca, which is the third oldest university in the world."

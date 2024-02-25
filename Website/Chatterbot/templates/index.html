@@ -1,122 +1,323 @@
 <!DOCTYPE html>
-<html>
-<title>ChatBot</title>
+<html lang="en">
+
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <style>
-    body {
-      font-family: monospace;
-    }
-    h1 {
-      background-color: #8080ff;
-      color: black;
-      display: inline-block;
-      font-size: 2em;
-      margin: 0;
-      padding: 10px;
-    }
-    #chatbox {
-      margin-left: auto;
-      margin-right: auto;
-      width: 40%;
-      margin-top: 60px;
-    }
-    #userInput {
-      margin-left: auto;
-      margin-right: auto;
-      width: 40%;
-      margin-top: 60px;
-    }
-    #textInput {
-      width: 90%;
-      border: none;
-      border-bottom: 3px solid black;
-      font-family: monospace;
-      font-size: 17px;
-    }
-    .userText {
-      color: black;
-      font-family: monospace;
-      font-size: 17px;
-      text-align: right;
-      line-height: 30px;
-    }
-    .userText span {
-      background-color: #e699ff;
-      padding: 10px;
-      border-radius: 2px;
-    }
-    .botText {
-      color: black;
-      font-family: monospace;
-      font-size: 17px;
-      text-align: left;
-      line-height: 30px;
-    }
-    .botText span {
-      background-color: #ffdd99;
-      padding: 10px;
-      border-radius: 2px;
-    }
-    #tidbit {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 300px;
-    }
-    .boxed {
-      margin-left: auto;
-      margin-right: auto;
-      width: 78%;
-      margin-top: 60px;
-      border: 1px solid green;
-    }
-    .box {
-      border: 2px solid black;
-    }
-  </style>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <title>Motion</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="recommenderQuiz.js" defer>
+    </script>
 </head>
+
+<ul class="main-navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Destinations</a>
+        <ul>
+            <li><a href="Result%20-%20Salamanca.html">Salamance, Spain</a></li>
+            <li><a href="Result%20-%20Dunhuang,%20China.html">Dunhuang, China </a></li>
+            <li><a href="Result%20-%20Srinagar,%20Kashmir.html">Srinagar, Kashmir</a></li>
+            <li><a href="Result%20-%20Krabi%20Town,%20Thailand.html">Krabi Town, Thailand</a></li>
+            <li><a href="Result%20-%20Assisi,%20Italy.html">Assisi, Italy</a></li>
+            <li><a href="Result%20-Tsarabanjina%20Island,%20Madagascar.html">Tsarabanjina Island, Madagascar</a></li>
+            <li><a href="Result%20-%20French.html">Mo'orea, French Polynesia</a></li>
+            <li><a href="Result%20-%20Japan.html">Hakone, Japan</a></li>
+            <li><a href="Result%20-%20Mexico.html">Puerto Vallarta, Mexico</a></li>
+        </ul>
+    </li>
+    <li><a href="About.html">About Us</a></li>
+</ul>
+
+
 <body>
-<center>
-  <h1>
-    AI ChatBot
-  </h1>
-</center>
-<div class="box"></div>
-<div class="boxed">
-  <div>
-    <div id="chatbox">
-      <p class="botText">
-        <span>Hi, I'm TravelBot! Ask me questions to learn more about your next destination. For a list of suggested prompts, enter "Help".</span>
-      </p>
+
+<!--Title and Description-->
+<header>
+    <div>
+        <h1>Discover your next travel destination.</h1>
+        <p id= "intro-description">Enter your preferences to be paired with an underrated location!</p>
     </div>
-    <div id="userInput">
-      <input id="textInput" type="text" name="msg" placeholder="Enter message here..." />
+</header>
+
+
+<main>
+
+    <!--Question 1-->
+    <h2>1. Are you interested in exploring historical sites and religious landmarks?</h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q1Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q1N" class="answer-button">No</button>
+        </div>
     </div>
-  </div>
-  <script>
-    function getBotResponse() {
-      var rawText = $("#textInput").val();
-      var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-      $("#textInput").val("");
-      $("#chatbox").append(userHtml);
-      document
-              .getElementById("userInput")
-              .scrollIntoView({ block: "start", behavior: "smooth" });
-      $.get("/get", { msg: rawText }).done(function(data) {
-        var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-        $("#chatbox").append(botHtml);
-        document
-                .getElementById("userInput")
-                .scrollIntoView({ block: "start", behavior: "smooth" });
-      });
-    }
-    $("#textInput").keypress(function(e) {
-      if (e.which == 13) {
-        getBotResponse();
-      }
-    });
-  </script>
-</div>
+
+    <!--Question 2-->
+    <h2>2. Do you enjoy spending time in cafes, experiencing local cuisine, and soaking in the ambiance?</h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q2Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q2N" class="answer-button">No</button>
+        </div>
+    </div>
+
+
+    <!--Question 3-->
+    <h2>3. Are you looking for destinations with beautiful beaches and opportunities for water activities?</h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q3Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q3N" class="answer-button">No</button>
+        </div>
+    </div>
+
+
+    <!--Question 4-->
+    <h2>4. Do you prefer destinations with activities like snorkeling, diving, or exploring marine life?</h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q4Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q4N" class="answer-button">No </button>
+        </div>
+    </div>
+
+    <!--Question 5-->
+    <h2>5. Are you interested in secluded island getaways with pristine natural environments? </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q5Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q5N" class="answer-button">No </button>
+        </div>
+    </div>
+
+    <!--Question 6-->
+    <h2>6. Do you enjoy rock-climbing? </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q6Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q6N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 7-->
+    <h2>7. Are you attracted to destinations with scenic mountain landscapes and opportunities for winter sports? </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q7Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q7N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 8-->
+    <h2>8. Are you interested in desert landscapes and historical sites?  </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q8Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q8N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 9-->
+    <h2>9. Do you prefer destinations with vibrant markets, cafes, and live music scenes? </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q9Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q9N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 10-->
+    <h2>10. Are you intrigued by destinations with a mix of history, art, and cultural experiences? </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q10Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q10N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 11-->
+    <h2>11. Are you interested in exploring ancient churches? </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q11Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q11N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 12-->
+    <h2>12. Are you drawn to destinations with panoramic viewpoints and scenic hiking trails?  </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q12Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q12N" class="answer-button">No </button>
+        </div>
+    </div>
+
+    <!--Question 13-->
+    <h2>13. Are you fascinated by the fusion of traditional and contemporary art forms?  </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q13Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q13N" class="answer-button">No </button>
+        </div>
+    </div>
+
+    <!--Question 14-->
+    <h2>14. Are you seeking relaxation and rejuvenation in tranquil natural settings such as hot springs and gardens?  </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q14Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q14N" class="answer-button">No</button>
+        </div>
+    </div>
+
+    <!--Question 15-->
+    <h2>15. Are you interested in exploring university cities?  </h2>
+    <div class="question">
+
+        <div class="answer-choice">
+            <button id="q15Y" class="answer-button">Yes</button>
+        </div>
+        <br>
+        <div class="answer-choice">
+            <button id="q15N" class="answer-button">No </button>
+        </div>
+    </div>
+
+    <!--Result-->
+    <div class="result-section">
+
+        <button id="showResult">Show Result ➛</button>
+        <h2 id="result">The ideal travel destination for you is: </h2>
+
+        <div id= "salamanca">
+            <p> Salamanca, Spain! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Salamanca.html">Salamance, Spain</a></li>
+        </div>
+
+        <div id= "dunhuang">
+            <p> Dunhuang, China! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Dunhuang,%20China.html">Dunhuang, China </a></li>
+        </div>
+
+        <div id= "kashmir">
+            <p> Srinagar, Kashmir! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Srinagar,%20Kashmir.html">Srinagar, Kashmir</a></li>
+        </div>
+
+        <div id= "krabi">
+            <p> Krabi Town, Thailand! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Krabi%20Town,%20Thailand.html">Krabi Town, Thailand</a></li>
+        </div>
+
+        <div id= "assisi">
+            <p> Assisi, Italy! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Assisi,%20Italy.html">Assisi, Italy</a></li>
+        </div>
+
+        <div id= "rabat">
+            <p> Rabat, Morocco! See the link below to learn more! </p>
+            <p> INSERT LINK </p>
+        </div>
+
+        <div id= "tsarabanjina">
+            <p> Tsarabanjina Island, Madagascar! See the link below to learn more! </p>
+            <li><a href="Result%20-Tsarabanjina%20Island,%20Madagascar.html">Tsarabanjina Island, Madagascar</a></li>
+        </div>
+
+        <div id= "moorea">
+            <p> Mo’orea, French Polynesia! See the link below to learn more! </p>
+            <li><a href="Result%20-%20French.html">Mo'orea, French Polynesia</a></li>
+        </div>
+
+        <div id= "hakone">
+            <p> Hakone, Japan! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Japan.html">Hakone, Japan</a></li>
+        </div>
+
+        <div id= "puertoVallarta">
+            <p> Puerto Vallarta, Mexico! See the link below to learn more! </p>
+            <li><a href="Result%20-%20Mexico.html">Puerto Vallarta, Mexico</a></li>
+        </div>
+
+    </div>
+
+    <!--Restart-->
+    <div class="restart-button">
+
+        <button id="restartButton">Restart Quiz ⟳</button>
+
+    </div>
+
+</main>
 </body>
+
+<div>
+    <ul>
+
+    </ul>
+</div>
+
 </html>
+

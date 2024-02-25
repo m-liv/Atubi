@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>ChatBot</title>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<center>
+    <h1>
+        AtubiBot
+    </h1>
+</center>
+<div class="box"></div>
+<div class="boxed">
+    <div>
+        <div id="chatbox">
+            <p class="botText">
+                <span>Hi, I'm AtubiBot! Ask me questions to learn more about your next destination. For a list of suggested prompts, enter "Help".</span>
+            </p>
+        </div>
+        <div id="userInput">
+            <input id="textInput" type="text" name="msg" placeholder="Enter message here..." />
+        </div>
+    </div>
+    <script>
+        function getBotResponse() {
+            var rawText = $("#textInput").val();
+            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document
+                .getElementById("userInput")
+                .scrollIntoView({ block: "start", behavior: "smooth" });
+            $.get("/get", { msg: rawText }).done(function(data) {
+                var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+                $("#chatbox").append(botHtml);
+                document
+                    .getElementById("userInput")
+                    .scrollIntoView({ block: "start", behavior: "smooth" });
+            });
+        }
+        $("#textInput").keypress(function(e) {
+            if (e.which == 13) {
+                getBotResponse();
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

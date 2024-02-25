@@ -75,6 +75,7 @@ q2N.addEventListener("click", disableQ2);
 
 function disableQ2()
 {
+    q2Y.setAttribute('disabled', 'disabled')
     q2Y.disabled = true;
     q2N.disabled = true;
 }

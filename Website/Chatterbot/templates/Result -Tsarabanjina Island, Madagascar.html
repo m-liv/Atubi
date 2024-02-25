@@ -1,4 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <meta charset="UTF-8">
     <title>Results</title>
     <link rel="stylesheet" href="style.css">
@@ -8,12 +11,12 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="#">Destinations</a>
         <ul>
-            <li><a href="Result%20-%20Salamanca.html">Salamance, Spain</a></li>
+            <li><a href="Result%20-%20Salamanca.html">Salamanca, Spain</a></li>
             <li><a href="Result%20-%20Dunhuang,%20China.html">Dunhuang, China </a></li>
             <li><a href="Result%20-%20Srinagar,%20Kashmir.html">Srinagar, Kashmir</a></li>
             <li><a href="Result%20-%20Krabi%20Town,%20Thailand.html">Krabi Town, Thailand</a></li>
             <li><a href="Result%20-%20Assisi,%20Italy.html">Assisi, Italy</a></li>
-            <li><a href="Result%20-Tsarabanjina%20Island,%20Madagascar.html">Tsarabanjina Island, Madagascar</a></li>
+            <li><a href="Result -Tsarabanjina Island, Madagascar.html">Tsarabanjina Island, Madagascar</a></li>
             <li><a href="Result%20-%20French.html">Mo'orea, French Polynesia</a></li>
             <li><a href="Result%20-%20Japan.html">Hakone, Japan</a></li>
             <li><a href="Result%20-%20Mexico.html">Puerto Vallarta, Mexico</a></li>
@@ -58,6 +61,46 @@
         </p>
     </div>
 </div>
+<div class="box"></div>
+<div class="boxed">
+    <div class="bothead">
+        <center>
+            AtubiBot Chat
+        </center>
+    </div>
+    <div>
+        <div id="chatbox">
+            <p class="botText">
+                <span>Hi, I'm AtubiBot! Ask me questions to learn more about your next destination. For a list of suggested prompts, enter "Help".</span>
+            </p>
+        </div>
+        <div id="userInput">
+            <input id="textInput" type="text" name="msg" placeholder="Enter message here..." />
+        </div>
+    </div>
+    <script>
+        function getBotResponse() {
+            var rawText = $("#textInput").val();
+            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document
+                .getElementById("userInput")
+                .scrollIntoView({ block: "start", behavior: "smooth" });
+            $.get("/get", { msg: rawText }).done(function(data) {
+                var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+                $("#chatbox").append(botHtml);
+                document
+                    .getElementById("userInput")
+                    .scrollIntoView({ block: "start", behavior: "smooth" });
+            });
+        }
+        $("#textInput").keypress(function(e) {
+            if (e.which == 13) {
+                getBotResponse();
+            }
+        });
+    </script>
 </body>
 
 

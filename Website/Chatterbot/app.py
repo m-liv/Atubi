@@ -34,7 +34,7 @@ trainer.train("./data/dunhuang.yml")
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("atubiBot.html")
 
 
 @app.route("/get")
