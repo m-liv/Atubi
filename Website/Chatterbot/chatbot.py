@@ -89,7 +89,7 @@ global newSetSize
 responseSet = set()
 while True:
     try:
-        userIn = input("> ")
+        userIn = input("> ").casefold()
         setSize = len(responseSet)
         bot_input = bot.get_response(userIn)
         responseSet.add(bot_input)
