@@ -1,9 +1,9 @@
 # chatbot
 # import nltk
-# import spacy.cli
-# spacy.cli.download("en_core_web_md")
-# spacy.cli.download("en_core_web_sm")
-# spacy.load("en_core_web_sm")
+import spacy
+spacy.cli.download("en_core_web_md")
+spacy.cli.download("en_core_web_sm")
+spacy.load("en_core_web_sm")
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
