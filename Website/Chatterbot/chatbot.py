@@ -1,8 +1,8 @@
 # chatbot
 # import nltk
 import spacy
-spacy.cli.download("en_core_web_md")
-spacy.cli.download("en_core_web_sm")
+spacy.cli.download("en")
+nlp = spacy.load('en_core_web_sm')
 spacy.load("en_core_web_sm")
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
@@ -32,11 +32,11 @@ destinationInput = input("Tell me, what is your next destination? > ")
 runLoop = True
 while (runLoop):
     if ("salamanca" in destinationInput.casefold()) | ("spain" in destinationInput.casefold()):
-        trainer.train("./Chatterbot/data/salamanca.yml")
+        trainer.train("./data/salamanca.yml")
         destination = "Salamanca"
         break
     elif ("dunhuang" in destinationInput.casefold()) | ("china" in destinationInput.casefold()):
-        trainer.train("./Chatterbot/data/dunhuang.yml")
+        trainer.train("./data/dunhuang.yml")
         destination = "Dunhuang"
         break
     elif ("srinagar" in destinationInput.casefold()) | ("kashmir" in destinationInput.casefold()):
