@@ -99,6 +99,7 @@ button  {
     display: inline-block; /* Make the button behave like an inline element */
     font-size: 20px; /* Set font size */
     cursor: pointer; /* Change cursor to pointer on hover */
+    border: black;
 }
 
 button:hover {
